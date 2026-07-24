@@ -19,7 +19,9 @@
 @media (min-width: 1120px) {
   .columns {
     grid-template-columns: minmax(0, 1fr) var(--sidebar-w);
-    align-items: start;
+    /* Deliberately NOT align-items: start. The sidebar column has to stretch to
+       the full row height, otherwise its sticky child has no track to travel
+       along and scrolls away with the feed. */
   }
 }
 
