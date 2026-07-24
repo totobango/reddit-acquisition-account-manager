@@ -55,8 +55,8 @@ export default function Page() {
               are not public.
             </p>
             <p>
-              Four claims changed while I was building this, and the corrections
-              are left visible in the posts rather than quietly removed. Three
+              Six claims changed while I was building this, and the corrections
+              are left visible in the posts rather than quietly removed. Four
               more are marked as things I looked for and could not confirm,
               mostly because Reddit&rsquo;s help centre and ads API would not
               load for me. If something here is still wrong, rule 4 applies.

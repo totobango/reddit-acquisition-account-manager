@@ -1,11 +1,6 @@
 import styles from "./Sidebar.module.css";
 
-const COMMUNITIES = [
-  { name: "r/PPC", tag: null },
-  { name: "r/advertising", tag: null },
-  { name: "r/adops", tag: null },
-  { name: "r/recruitinghell", tag: "mod posted here once" },
-];
+const COMMUNITIES = ["r/PPC", "r/advertising", "r/adops", "r/DigitalMarketing"];
 
 export function Sidebar() {
   return (
@@ -113,13 +108,12 @@ export function Sidebar() {
       <section className={styles.card}>
         <h2 className={styles.cardTitle}>Related communities</h2>
         <ul className={styles.linkList}>
-          {COMMUNITIES.map((c) => (
-            <li className={styles.community} key={c.name}>
+          {COMMUNITIES.map((name) => (
+            <li className={styles.community} key={name}>
               <span className={styles.communityIcon} aria-hidden="true">
                 r/
               </span>
-              {c.name}
-              {c.tag && <span className={styles.tag}>{c.tag}</span>}
+              {name}
             </li>
           ))}
         </ul>

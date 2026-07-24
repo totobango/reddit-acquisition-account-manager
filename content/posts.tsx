@@ -619,59 +619,6 @@ export const POSTS: Post[] = [
   /* ---------------------------------------------------------------- 7 */
   {
     meta: {
-      id: "post-oc",
-      flair: "OC",
-      tone: "orange",
-      title:
-        "I posted on r/recruitinghell and got 136 upvotes and 15k views. Here is what it taught me about ads.",
-      score: 967,
-      comments: 158,
-      age: "1d",
-    },
-    body: (
-      <>
-        <p>
-          I built recruitingishell.com, an anonymous multilingual archive of
-          broken hiring experiences, and posted it on r/recruitinghell. 136
-          upvotes, roughly 15,000 views.
-        </p>
-        <p>
-          I am not putting this here because upvotes are a credential. They are
-          not. I am putting it here because it is the closest thing I have to
-          evidence that I understand this platform from the inside rather than
-          from a deck.
-        </p>
-        <p>What actually made it work:</p>
-        <p>
-          <strong>It was not about me.</strong> The post led with the problem the
-          community already talks about every day, not with my site.
-        </p>
-        <p>
-          <strong>It was specific.</strong>{" "}
-          Real submissions, real screenshots,
-          no &ldquo;revolutionary platform&rdquo; language.
-        </p>
-        <p>
-          <strong>I stayed in the comments.</strong> Including the critical ones.
-          Especially those.
-        </p>
-        <p>
-          That is exactly the brief I would give an advertiser. Lead with
-          something the community already half believes. Be specific. Do not
-          disappear after you post.
-        </p>
-        <p>
-          And yes, I am aware of the irony of using a recruiting frustration
-          subreddit as a credential in a job application. I thought about cutting
-          it. I left it in because it is true.
-        </p>
-      </>
-    ),
-  },
-
-  /* ---------------------------------------------------------------- 8 */
-  {
-    meta: {
       id: "post-tool",
       flair: "Tool",
       tone: "green",
@@ -719,7 +666,7 @@ export const POSTS: Post[] = [
     ),
   },
 
-  /* ---------------------------------------------------------------- 9 */
+  /* ---------------------------------------------------------------- 8 */
   {
     meta: {
       id: "post-data",
@@ -783,7 +730,7 @@ export const POSTS: Post[] = [
     ),
   },
 
-  /* --------------------------------------------------------------- 10 */
+  /* ---------------------------------------------------------------- 9 */
   {
     meta: {
       id: "post-ama",
@@ -819,7 +766,7 @@ export const POSTS: Post[] = [
         <p>
           I built this instead of writing a cover letter. Every number on it is
           either linked to a source or marked as something I could not confirm.
-          Four of them changed while I was building it, and I left the
+          Six of them changed while I was building it, and I left the
           corrections visible rather than quietly fixing them.
         </p>
         <p>

@@ -21,7 +21,7 @@ Rule 5 of the sub is "show the work", so every figure on the page carries one of
 | `could not verify` | Looked for it, could not confirm it, said so instead of asserting it |
 | `corrected` | An earlier draft of this page had it wrong |
 
-Four claims from the original brief did not survive checking and are shown as corrections rather than quietly fixed:
+Six claims did not survive checking and are shown as corrections rather than quietly fixed. The four that came straight from the brief:
 
 - **Europe ARPU of $1.17** does not exist. Reddit reports Global $5.23, US $9.63, International $2.02 (Q1 2026 shareholder letter).
 - **"Seventh consecutive quarter above 60% ad revenue growth"** is total revenue, not advertising revenue. Total grew 69%, advertising grew 74%.
