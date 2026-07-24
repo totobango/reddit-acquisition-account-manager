@@ -1,0 +1,160 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.snoo {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.wordmark {
+  font-size: 1.375rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .wordmark {
+    display: none;
+  }
+}
+
+.search {
+  flex: 1;
+  max-width: 690px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 40px;
+  padding: 0 0.875rem;
+  background: var(--bg-sunken);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  color: var(--ink-weak);
+  transition: background var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+
+.search:focus-within {
+  background: var(--bg);
+  border-color: var(--border-strong);
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 0.875rem;
+  color: var(--ink);
+  cursor: default;
+}
+
+.searchInput::placeholder {
+  /* --ink-weak is 5.44:1, so the placeholder clears AA rather than
+     sitting at the usual washed-out browser default. */
+  color: var(--ink-weak);
+  opacity: 1;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.ghostBtn {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 0.875rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--dur-fast) ease;
+}
+
+.ghostBtn:hover {
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .ghostBtn {
+    display: none;
+  }
+}
+
+.user {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 36px;
+  padding: 0 0.5rem 0 0.25rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  transition: background var(--dur-fast) ease;
+}
+
+.user:hover {
+  background: var(--bg-hover);
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--orange-solid);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.username {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .username {
+    display: none;
+  }
+}

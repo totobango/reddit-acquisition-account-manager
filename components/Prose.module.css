@@ -1,0 +1,186 @@
+/* Shared typography for post bodies. */
+
+.h {
+  margin: 1.25rem 0 0.375rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.h:first-child {
+  margin-top: 0;
+}
+
+.ul,
+.ol {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.ul li,
+.ol li {
+  margin-bottom: 0.3125rem;
+}
+
+/* Full border and a tint, never a side stripe. */
+.tldr {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--bg-sunken);
+}
+
+.note {
+  margin: 1rem 0 0;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid #f0d9c4;
+  border-radius: 8px;
+  background: #fdf6ef;
+}
+
+.noteLabel {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #8a4b13;
+}
+
+/* Wide content scrolls inside its own container so the page body never does. */
+.tableWrap {
+  margin: 0 0 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.table th,
+.table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.table th {
+  background: var(--bg-sunken);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table td:first-child {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--ink-weak);
+}
+
+.caseList {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.625rem;
+}
+
+.case {
+  padding: 0.75rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.caseName {
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.caseBody {
+  margin: 0;
+  color: var(--ink);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.8125em;
+  padding: 0.0625rem 0.25rem;
+  border-radius: 4px;
+  background: var(--bg-sunken);
+}
+
+.sig {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  color: var(--ink-weak);
+  font-size: 0.8125rem;
+}
+
+/* --- Sourcing chips. The honesty rule, made visible. --- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  /* Symmetric margin so a chip never butts against the text on either side,
+     regardless of how JSX collapsed the surrounding whitespace. */
+  margin-inline: 0.25rem;
+  padding: 0.0625rem 0.375rem;
+  border-radius: 4px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.chipSourced {
+  background: var(--flair-blue-bg);
+  color: var(--flair-blue-ink);
+}
+
+.chipSourced:hover {
+  background: #d6e7f8;
+  text-decoration: underline;
+}
+
+.chipReconstructed {
+  background: var(--flair-slate-bg);
+  color: var(--flair-slate-ink);
+}
+
+.chipUnverified {
+  background: #fdf0e3;
+  color: #8a4b13;
+}
+
+.chipCorrected {
+  background: var(--flair-red-bg);
+  color: var(--flair-red-ink);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin: 0 0 1rem;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-sunken);
+  font-size: 0.75rem;
+  color: var(--ink-weak);
+}

@@ -1,0 +1,172 @@
+/*
+  r/FRITES - design tokens.
+  Reproduction of current Reddit (2023-2026) light theme.
+  Every contrast pair below is measured, not estimated. See DESIGN.md.
+*/
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --bg: #ffffff;
+  --bg-sunken: #f6f8f9;
+  --bg-hover: #f2f4f5;
+  --bg-page: #ffffff;
+  --border: #e2e7e9;
+  --border-strong: #d2d8db;
+
+  /* Content. --ink-weak is 5.44:1 on white. The brief's #7C7C7C is 4.18:1 and fails AA. */
+  --ink: #0f1a1c;
+  --ink-weak: #5c6c74;
+
+  /* Brand.
+     --orange 3.45:1 -> fills only, never text on a light surface.
+     --orange-text 4.61:1, --periwinkle 4.58:1, --blue-text 5.52:1 -> all pass AA. */
+  --orange: #ff4500;
+  --orange-hover: #e03d00;
+  --orange-text: #d93a00;
+  /* Fills that carry white text. White on #FF4500 is only 3.44:1, so anything
+     with a label on it uses Reddit's own darker light-mode orange (4.61:1).
+     #FF4500 stays for pure graphics: the Snoo, the sub icon, the timeline dot. */
+  --orange-solid: #d93a00;
+  --orange-solid-hover: #bf3300;
+  --periwinkle: #6a5cff;
+  --blue: #0079d3;
+  --blue-text: #0069c2;
+
+  /* Flair chips: tinted background, darkened text, each pair >= 4.5:1 */
+  --flair-blue-bg: #e5f0fb;
+  --flair-blue-ink: #00559e;
+  --flair-orange-bg: #ffeae2;
+  --flair-orange-ink: #b83000;
+  --flair-green-bg: #e2f3e9;
+  --flair-green-ink: #146c37;
+  --flair-purple-bg: #ecebff;
+  --flair-purple-ink: #4b3fd4;
+  --flair-red-bg: #fdeaea;
+  --flair-red-ink: #b3261e;
+  --flair-slate-bg: #eceff1;
+  --flair-slate-ink: #45565f;
+
+  /* Type */
+  --font-sans: var(--font-reddit-sans), "Reddit Sans", "IBM Plex Sans",
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-reddit-mono), "Reddit Mono", ui-monospace,
+    SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Layout */
+  --header-h: 56px;
+  --content-max: 1248px;
+  --sidebar-w: 316px;
+  --radius-card: 16px;
+  --radius-pill: 999px;
+
+  /* Semantic z-scale. No arbitrary values anywhere in the codebase. */
+  --z-base: 1;
+  --z-sticky-sidebar: 40;
+  --z-header: 50;
+  --z-tooltip: 70;
+
+  /* Motion */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --dur-fast: 100ms;
+  --dur-vote: 120ms;
+  --dur-expand: 200ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Anchored posts must clear the sticky header. */
+  scroll-padding-top: calc(var(--header-h) + 12px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 0.75rem;
+  text-wrap: pretty;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--blue-text);
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Focus is never removed. Visible ring on keyboard navigation only. */
+:focus-visible {
+  outline: 2px solid var(--blue-text);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced motion collapses every transition. Nothing on this page is
+   gated behind an animation, so removing them costs no content. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

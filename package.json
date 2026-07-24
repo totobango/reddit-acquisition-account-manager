@@ -1,0 +1,24 @@
+{
+  "name": "reddit-acquisition-account-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "r/FRITES - a pitch by Thomas Germain for the Acquisition Account Manager role at Reddit, Amsterdam. Built as a subreddit, because the medium is the message.",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^16.2.11",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}
