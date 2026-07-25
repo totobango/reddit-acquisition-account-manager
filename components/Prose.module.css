@@ -31,6 +31,27 @@
   background: var(--bg-sunken);
 }
 
+/* The 30 second answer to "why him", sitting above the post's own TL;DR.
+   Deliberately the one side-striped block on the page: a full border would
+   read as a second TL;DR, and these two answer different questions. */
+.lede {
+  margin: 0 0 0.75rem;
+  padding: 0.6875rem 0.875rem;
+  border-left: 4px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  background: #fafbfc;
+  color: var(--ink);
+}
+
+.ledeLabel {
+  display: block;
+  margin-bottom: 0.1875rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--orange-text);
+}
+
 .note {
   margin: 1rem 0 0;
   padding: 0.75rem 0.875rem;
@@ -110,6 +131,79 @@
 .caseBody {
   margin: 0;
   color: var(--ink);
+}
+
+/* Collapsible provenance block, closed by default. Native details/summary, so
+   it works with no JavaScript and the browser owns the keyboard behaviour.
+   The substance of a post goes in the body; the audit trail goes in here. */
+.fold {
+  margin: 1rem 0 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-sunken);
+}
+
+.foldSummary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  /* Removes the default triangle. Safari needs the -webkit- rule as well. */
+  list-style: none;
+}
+
+.foldSummary::-webkit-details-marker {
+  display: none;
+}
+
+.foldSummary:hover {
+  background: #eef2f4;
+}
+
+.foldSummary:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: -2px;
+}
+
+/* Chevron drawn from two borders so it needs no icon import inside CSS. */
+.foldSummary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  margin-left: auto;
+  border-right: 2px solid var(--ink-weak);
+  border-bottom: 2px solid var(--ink-weak);
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 120ms ease;
+}
+
+.fold[open] .foldSummary::after {
+  transform: translateY(1px) rotate(-135deg);
+}
+
+.foldBody {
+  padding: 0.75rem 0.875rem 0.875rem;
+  border-top: 1px solid var(--border);
+}
+
+.foldBody > :first-child {
+  margin-top: 0;
+}
+
+.foldBody > :last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .foldSummary::after {
+    transition: none;
+  }
 }
 
 .mono {

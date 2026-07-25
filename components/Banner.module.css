@@ -3,13 +3,15 @@
 }
 
 /* min-height rather than height: the banner grows if the context line wraps,
-   so the text can never overflow the band at any viewport. The bottom padding
-   keeps that text clear of the sub icon, which overlaps the lower left. */
+   so the text can never overflow the band at any viewport. Padding is
+   symmetric so the line lands on the true centre of the band on both axes;
+   the sub icon overlaps the lower left, and a centred line clears it. */
 .banner {
   min-height: 128px;
   display: flex;
   align-items: center;
-  padding: 1.25rem 1.5rem 2.25rem;
+  justify-content: center;
+  padding: 1.25rem 1.5rem;
   border-radius: var(--radius-card);
   background: linear-gradient(105deg, #1a1a2e 0%, #2d1b3d 48%, #7a2a10 82%, #ff4500 130%);
   position: relative;
@@ -30,9 +32,12 @@
 }
 
 @media (max-width: 767px) {
+  /* The line wraps to three or four lines at phone widths, so it keeps the
+     extra bottom padding here: centred on the horizontal axis, but lifted off
+     the sub icon rather than running into it. */
   .banner {
     min-height: 104px;
-    padding: 1rem 1rem 2.5rem;
+    padding: 1rem 1rem 2.25rem;
     border-radius: 0;
   }
 
@@ -129,6 +134,7 @@
   font-weight: 500;
   line-height: 1.45;
   letter-spacing: -0.005em;
+  text-align: center;
   text-wrap: balance;
 }
 

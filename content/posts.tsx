@@ -27,8 +27,19 @@ export const POSTS: Post[] = [
     },
     body: (
       <>
+        {/* Two boxes, two questions. This one answers "why him" for a reader
+            with thirty seconds; the TL;DR below answers "what is in this post".
+            The stripe keeps them from reading as duplicates. */}
+        <div className={p.lede}>
+          <span className={p.ledeLabel}>If you only read one thing</span>
+          Six years onboarding advertisers onto ad platforms at Google, LinkedIn
+          and Pinterest. Rejected here in March for a hunter role, which was the
+          right call. This role is an execution role, and execution is what I
+          have been doing for six years. The rest of this page is the evidence.
+        </div>
+
         <div className={p.tldr}>
-          <strong>TL;DR:</strong> Week 1 setup and discovery. Week 2 first
+          <strong>TL;DR:</strong>{" "}Week 1 setup and discovery. Week 2 first
           campaign live. Weeks 3 to 4 first signals and pruning. Month 2
           iteration and scaling. Months 3 to 6 proof of value, then graduation to
           Same Store Growth. The whole thing runs on a written Test and Learn
@@ -181,7 +192,7 @@ export const POSTS: Post[] = [
           the gap she was pointing at. It was there.
         </p>
         <p>
-          <strong>Second, I kept watching Reddit.</strong> Advertising revenue
+          <strong>Second, I kept watching Reddit.</strong>{" "}Advertising revenue
           grew 74 percent year over year in Q1 2026, to 625 million dollars.
           <Sourced href={S.q1Letter} label="Q1 2026 letter" /> International
           revenue grew 76 percent against 67 percent in the US, so the rest of the
@@ -328,6 +339,174 @@ export const POSTS: Post[] = [
   },
 
   /* ---------------------------------------------------------------- 4 */
+  /* The one post that is not in English, on purpose. The role covers France,
+     Italy and Spain, and rule 5 says show the work rather than claim it.
+     lang="fr" so screen readers switch voice and the browser hyphenates
+     correctly instead of reading French with an English pronunciation model. */
+  {
+    meta: {
+      id: "post-marche-fr",
+      flair: "Marché FR",
+      tone: "blue",
+      title:
+        "Le même exercice, en français. Parce que le ton Reddit anglais ne marche pas ici.",
+      score: 592,
+      comments: 78,
+      age: "10h",
+    },
+    body: (
+      <div lang="fr">
+        <p>
+          Toute cette page est en anglais. Ce post ne l&rsquo;est pas, et
+          c&rsquo;est volontaire. Le poste couvre la France, l&rsquo;Italie et
+          l&rsquo;Espagne, et écrire &laquo;&nbsp;français natif&nbsp;&raquo;
+          dans un AMA, c&rsquo;est une ligne de CV. La règle 5 de ce sub demande
+          de montrer le travail. Voici donc l&rsquo;exercice du post précédent,
+          refait pour le marché français.
+        </p>
+        <p>
+          Précision utile&nbsp;: ce qui suit vient de ma lecture des
+          communautés francophones, pas d&rsquo;une étude. Je ne vais pas y
+          coller un pourcentage que je serais incapable de sourcer.
+          <Reconstructed label="observation" />
+        </p>
+
+        <h3 className={p.h}>Ce qui change dans le registre</h3>
+        <ul className={p.ul}>
+          <li>
+            <strong>Le Redditor francophone est plus sec.</strong>{" "}Plus
+            ironique, moins démonstratif. L&rsquo;enthousiasme américain,
+            transposé tel quel, ne se lit pas comme de l&rsquo;énergie&nbsp;: il
+            se lit comme de la vente. Un superlatif de trop et le fil bascule
+            avant le premier commentaire de fond.
+          </li>
+          <li>
+            <strong>La première personne fonctionne, le storytelling long
+            beaucoup moins.</strong>{" "}En anglais, trois paragraphes
+            d&rsquo;histoire personnelle avant d&rsquo;arriver au sujet, ça
+            passe. En français, on attend que vous en veniez au fait, et on vous
+            le fait remarquer si vous tardez.
+          </li>
+          <li>
+            <strong>L&rsquo;auto-dérision marche mieux que l&rsquo;humilité
+            affichée.</strong>{" "}&laquo;&nbsp;On s&rsquo;est plantés&nbsp;&raquo;
+            passe très bien. &laquo;&nbsp;Nous restons humbles et à
+            l&rsquo;écoute de notre communauté&nbsp;&raquo; se fait démonter,
+            parce que ça sonne comme un communiqué de presse et que tout le
+            monde le sait.
+          </li>
+          <li>
+            <strong>Les communautés utiles selon le vertical.</strong>{" "}r/france
+            et r/AskFrance pour le grand public, r/vosfinances pour la finance
+            et l&rsquo;assurance, r/conseiljuridique pour le juridique,
+            r/BeautyFR pour la beauté, r/DeLaFrance quand le registre peut être
+            plus léger. Ce ne sont pas des équivalents traduits des
+            communautés anglophones, elles ont leurs propres codes.
+          </li>
+        </ul>
+
+        <h3 className={p.h}>Le même sérum, deux versions</h3>
+        <p>
+          Même produit, même budget, même audience. La seule variable est de
+          savoir si la créa a été traduite ou écrite.
+        </p>
+
+        <MockAdPair>
+          <MockAd
+            tone="bad"
+            brand="u/MarqueFR"
+            initials="MF"
+            title="Découvrez notre nouvelle gamme révolutionnaire !"
+            copy="Une formule inédite qui transforme votre peau en seulement 7 jours. Profitez de -20% sur votre première commande !"
+            cta="J’en profite"
+            score={-31}
+            comments={[
+              {
+                user: "u/pas_convaincu",
+                text: "traduit de l’anglais avec les pieds",
+              },
+              {
+                user: "u/lecteur_du_dimanche",
+                text: "le point d’exclamation",
+              },
+            ]}
+            verdict="Traduction littérale"
+          />
+          <MockAd
+            tone="good"
+            brand="u/MarqueFR"
+            initials="MF"
+            title="On a refait notre sérum parce que vous nous avez dit qu’il peluchait sous la crème solaire"
+            copy="Huit mois de reformulation. Base silicone plus légère. Même prix. Honnêtement, si vous n’aviez pas le problème, vous ne verrez pas la différence. Si vous l’aviez, celui-là est pour vous. Je réponds en commentaire."
+            cta="Voir les notes de reformulation"
+            score={247}
+            comments={[
+              { user: "u/pas_convaincu", text: "au moins c’est clair" },
+              {
+                user: "u/lecteur_du_dimanche",
+                text: "ça change des marques qui nient tout",
+              },
+            ]}
+            verdict="Écrit pour le marché"
+          />
+        </MockAdPair>
+
+        <h3 className={p.h}>Ce qui bouge par rapport à la version anglaise</h3>
+        <p>
+          Ce ne sont pas les mêmes deux cartes traduites. Trois choses changent,
+          et ce sont exactement les trois qu&rsquo;une traduction rate.
+        </p>
+        <ul className={p.ul}>
+          <li>
+            <strong>Le français coupe l&rsquo;enthousiasme.</strong>{" "}La version
+            anglaise garde un reste de chaleur commerciale, et elle peut se le
+            permettre. Ici, tout ce qui ressemble à de la promesse est retiré.
+            Il ne reste que des faits vérifiables&nbsp;: huit mois, base
+            silicone, même prix.
+          </li>
+          <li>
+            <strong>La limite arrive plus tôt.</strong>{" "}En anglais, l&rsquo;aveu
+            (&laquo;&nbsp;some of you will not notice a difference&nbsp;&raquo;)
+            arrive en fin de copie, après l&rsquo;argument. En français, il
+            arrive avant la conclusion, parce qu&rsquo;un lecteur qui repère
+            l&rsquo;argument avant la nuance considère que la nuance est un
+            rattrapage.
+          </li>
+          <li>
+            <strong>&laquo;&nbsp;Je réponds en commentaire&nbsp;&raquo; remplace
+            &laquo;&nbsp;Happy to answer questions&nbsp;&raquo;.</strong>{" "}La
+            traduction littérale, &laquo;&nbsp;ravi de répondre à vos
+            questions&nbsp;&raquo;, sonne servile. Elle place la marque en
+            position de demandeur, ce qui en anglais se lit comme de la
+            disponibilité et en français comme de la faiblesse.
+            &laquo;&nbsp;Je réponds en commentaire&nbsp;&raquo; annonce la même
+            chose sans rien mendier.
+          </li>
+        </ul>
+        <p>
+          Le reste tient au pronom. La version anglaise dit &laquo;&nbsp;we
+          reformulated&nbsp;&raquo;. La française passe à
+          &laquo;&nbsp;on&nbsp;&raquo;, puis à &laquo;&nbsp;je&nbsp;&raquo; sur
+          la dernière ligne. Une personne qui répond, pas un service client.
+          C&rsquo;est un détail de trois lettres et il fait la différence entre
+          une marque présente et une marque qui poste.
+        </p>
+
+        <div className={p.note}>
+          <span className={p.noteLabel}>Italie et Espagne, honnêtement</span>
+          <strong>Espagnol&nbsp;:</strong>{" "}je le parle en conversation. Je peux
+          lire une créa et repérer si le ton est juste. Je ne l&rsquo;écrirais
+          pas seul sans relecture native.{" "}
+          <strong>Italien&nbsp;:</strong>{" "}je le lis, je ne l&rsquo;écris pas.
+          Sur ce marché je m&rsquo;appuierais sur l&rsquo;équipe et sur des
+          partenaires locaux, et je préfère le dire maintenant plutôt que de le
+          découvrir en réunion.
+        </div>
+      </div>
+    ),
+  },
+
+  /* ---------------------------------------------------------------- 5 */
   {
     meta: {
       id: "post-testlearn",
@@ -336,7 +515,7 @@ export const POSTS: Post[] = [
       title: "The 5 hypotheses I would test in the first 8 weeks",
       score: 421,
       comments: 56,
-      age: "11h",
+      age: "13h",
     },
     body: (
       <>
@@ -404,7 +583,7 @@ export const POSTS: Post[] = [
           awkward conversation in week six.
         </p>
         <p>
-          <strong>Reddit takes longer to read than Meta.</strong> The
+          <strong>Reddit takes longer to read than Meta.</strong>{" "}The
           consideration cycle is longer, and conversions keep landing well after
           the impression because people research, leave, and come back. A four
           week test measures signal, not revenue. The specific window I quote to
@@ -426,7 +605,7 @@ export const POSTS: Post[] = [
     ),
   },
 
-  /* ---------------------------------------------------------------- 5 */
+  /* ---------------------------------------------------------------- 6 */
   {
     meta: {
       id: "post-max",
@@ -435,7 +614,7 @@ export const POSTS: Post[] = [
       title: "Reddit Max changes what a mid-market AM is actually for",
       score: 389,
       comments: 74,
-      age: "14h",
+      age: "16h",
     },
     body: (
       <>
@@ -493,7 +672,7 @@ export const POSTS: Post[] = [
           <Sourced href={S.maxVideoWeek} label="VideoWeek" />
         </div>
         <p>
-          <strong>What that means for this job:</strong> if the algorithm handles
+          <strong>What that means for this job:</strong>{" "}if the algorithm handles
           the bidding, the AM stops being a button pusher and becomes a
           translator. The value moves to reading the personas, turning them into
           creative direction, and explaining to a client why their audience is
@@ -507,7 +686,7 @@ export const POSTS: Post[] = [
     ),
   },
 
-  /* ---------------------------------------------------------------- 6 */
+  /* ---------------------------------------------------------------- 7 */
   {
     meta: {
       id: "post-cases",
@@ -516,14 +695,16 @@ export const POSTS: Post[] = [
       title: "4 campaigns that added to the conversation, with the numbers",
       score: 512,
       comments: 41,
-      age: "1d",
+      age: "21h",
     },
     body: (
       <>
+        {/* The finding leads. The audit trail is real work, but it was burying
+            the point, so it now lives folded at the bottom of the post. */}
         <p>
-          I went back through these to check them rather than copy them from a
-          roundup. Two of the four had something wrong in the version that
-          circulates.
+          The pattern is the same in all four. None of them arrived and shouted.
+          Škoda let a subreddit spec a car. Siemens answered questions in public.
+          Contiki used the community&rsquo;s own photographs.
         </p>
 
         <ul className={p.caseList}>
@@ -531,21 +712,10 @@ export const POSTS: Post[] = [
             <h4 className={p.caseName}>Škoda UK, &ldquo;The Redditor Edit&rdquo;</h4>
             <p className={p.caseBody}>
               Co-built with r/CarTalkUK, who specced an Octavia. Reported 255
-              percent above target on orders, on a budget of around 500,000
-              pounds against a usual car launch spend of 3 to 5 million.
+              percent above target on orders, on roughly 500,000 pounds against
+              a usual car launch spend of 3 to 5 million.
               <Sourced href={S.skodaDrum} label="The Drum" />
-              <Sourced href={S.skodaMediaCat} label="MediaCat" /> The name that
-              circulates as &ldquo;Redditor Edition&rdquo; is actually &ldquo;The
-              Redditor Edit&rdquo;.
-              <Corrected />
-            </p>
-            <p className={p.caseBody}>
-              I dropped the &ldquo;84 percent positive sentiment&rdquo; figure
-              that appears alongside this case. I could only trace it to one
-              aggregator with no citation, and that same page contradicts The
-              Drum on mention volume. It may well be true. I could not stand it
-              up.
-              <Unverified />
+              <Sourced href={S.skodaMediaCat} label="MediaCat" />
             </p>
           </li>
 
@@ -553,112 +723,89 @@ export const POSTS: Post[] = [
             <h4 className={p.caseName}>OREO x Star Wars</h4>
             <p className={p.caseBody}>
               A Sci-Fi, Horror and Comic category takeover with 15 and 6 second
-              video. Reported +10.2 points ad awareness and +6 points brand
-              awareness.
-              <Sourced href={S.superside} label="secondary" /> The commonly
-              repeated version of this says &ldquo;Sci-Fi and Comics&rdquo; and
-              adds a carousel. Neither matches the sources I could find.
-              <Corrected />
+              video. Reported +10.2 points ad awareness.
+              <Sourced href={S.superside} label="secondary" />
             </p>
           </li>
 
           <li className={p.case}>
             <h4 className={p.caseName}>Contiki</h4>
             <p className={p.caseBody}>
-              Travel category takeovers plus creative built from real
-              Redditors&rsquo; own trip content. Reported 305 percent ROAS, an 11
-              percent higher CTR than benchmark, and an 8 percent lower CPC.
+              Travel category takeovers, with the creative built from real
+              Redditors&rsquo; own trip content. Reported 305 percent ROAS.
               <Sourced href={S.superside} label="secondary" />
-            </p>
-            <p className={p.caseBody}>
-              Two things I had to fix here. No source names r/travel
-              specifically, it was a travel category buy. And &ldquo;Live the
-              Legend&rdquo; appears to be a separate Contiki brand campaign that
-              has been folded into this case study by repetition.
-              <Corrected />
             </p>
           </li>
 
           <li className={p.case}>
             <h4 className={p.caseName}>Siemens Germany</h4>
             <p className={p.caseBody}>
-              An AMA plus free-form creative. 46 percent higher CTR than the
-              German benchmark, confirmed by German trade press rather than a
-              vendor blog.
-              <Sourced href={S.siemensWuv} label="W&V" /> The 24 percent lower
-              CPC that travels with it comes from a single agency blog, and the
-              agency&rsquo;s own case page publishes neither CTR nor CPC.
-              <Sourced href={S.siemensAgency} label="agency case" />
+              An AMA plus free-form creative. Reported 46 percent higher CTR
+              than the German benchmark.
+              <Sourced href={S.siemensWuv} label="W&V" />
             </p>
           </li>
         </ul>
 
-        <p>
-          The pattern is the same in all four. None of them arrived and shouted.
-          Škoda let a subreddit spec a car. Siemens answered questions in public.
-          Contiki used the community&rsquo;s own photographs.
-        </p>
+        <details className={p.fold}>
+          <summary className={p.foldSummary}>
+            What I had to correct while checking these (4)
+          </summary>
+          <div className={p.foldBody}>
+            <p>
+              I went back through these to check them rather than copy them from
+              a roundup. Four things did not survive the check.
+            </p>
+            <ol className={p.ol}>
+              <li>
+                <strong>Škoda, the name.</strong>{" "}What circulates as
+                &ldquo;Redditor Edition&rdquo; is actually &ldquo;The Redditor
+                Edit&rdquo;.
+                <Corrected />
+              </li>
+              <li>
+                <strong>Škoda, the sentiment figure.</strong>{" "}I dropped the
+                &ldquo;84 percent positive sentiment&rdquo; number that travels
+                with this case. I could only trace it to one aggregator with no
+                citation, and that same page contradicts The Drum on mention
+                volume. It may well be true. I could not stand it up.
+                <Unverified />
+              </li>
+              <li>
+                <strong>OREO, the format.</strong>{" "}The commonly repeated version
+                says &ldquo;Sci-Fi and Comics&rdquo; and adds a carousel.
+                Neither matches the sources I could find.
+                <Corrected />
+              </li>
+              <li>
+                <strong>Contiki, two things.</strong>{" "}No source names r/travel
+                specifically, it was a travel category buy. And &ldquo;Live the
+                Legend&rdquo; appears to be a separate Contiki brand campaign
+                that has been folded into this case study by repetition.
+                <Corrected />
+              </li>
+            </ol>
+            <p>
+              One caveat that is not a correction: the 24 percent lower CPC that
+              travels with the Siemens case comes from a single agency blog, and
+              the agency&rsquo;s own case page publishes neither CTR nor CPC, so
+              I left it out of the body above.
+              <Sourced href={S.siemensAgency} label="agency case" />
+            </p>
 
-        <div className={p.note}>
-          <span className={p.noteLabel}>Sourcing note</span>
-          These are reported figures from brands, their agencies and awards
-          submissions, not independently audited results. Škoda and Siemens have
-          real press behind them. OREO and Contiki trace back to marketing blogs
-          citing Reddit success story pages I could not open directly, so they
-          get a weaker label. I also could not find a single named French,
-          Spanish or Italian mid-market case study with hard numbers attached,
-          which tells you how early this still is in those three markets.
-        </div>
-      </>
-    ),
-  },
-
-  /* ---------------------------------------------------------------- 7 */
-  {
-    meta: {
-      id: "post-tool",
-      flair: "Tool",
-      tone: "green",
-      title:
-        "I built an ad tech SaaS solo. Reddit is one of the seven platforms it supports.",
-      score: 445,
-      comments: 62,
-      age: "2d",
-    },
-    body: (
-      <>
-        <p>
-          adsfellow.app. Built alone, no team, no funding. It generates campaign
-          strategy across Google, Meta, LinkedIn, Pinterest, Microsoft, TikTok
-          and Reddit.
-        </p>
-        <p>
-          Why that matters for an AM role: I have had to read the Reddit ads
-          documentation as a builder, not as a buyer. I know what a pixel event
-          payload looks like, what a Conversions API rejection looks like when it
-          comes back, and why deduplication between pixel and CAPI matters when
-          both are firing for the same conversion.
-        </p>
-        <p>
-          I was going to list the exact field names that trip people up. I have
-          them from third party integration docs rather than from Reddit&rsquo;s
-          own API reference, which I could not reach while building this page, so
-          I am not going to recite a schema I have not re-checked at the source.
-          <Unverified />
-        </p>
-        <p>
-          The part that does not need a citation: when a client&rsquo;s pixel is
-          not firing, I do not open a ticket and wait. I diagnose it first, then
-          open the ticket with the diagnosis attached. That saves Ad Ops a round
-          trip and it saves the client a week of blind spend.
-        </p>
-        <p>
-          Measurement is not a setup task you tick off in week one. It is a
-          retention lever. Advertisers rarely churn loudly. They quietly reduce
-          budget because they could not prove the return internally when their own
-          boss asked. If the client cannot demonstrate the value of Reddit to
-          their CFO, Reddit does not make next year&rsquo;s plan.
-        </p>
+            <div className={p.note}>
+              <span className={p.noteLabel}>Sourcing note</span>
+              These are reported figures from brands, their agencies and awards
+              submissions, not independently audited results. Škoda and Siemens
+              have real press behind them. OREO and Contiki trace back to
+              marketing blogs citing Reddit success story pages I could not open
+              directly, so they get a weaker label. I also could not find a
+              single named French, Spanish or Italian mid-market case study with
+              hard numbers attached, which tells you how early this still is in
+              those three markets.
+            </div>
+          </div>
+        </details>
       </>
     ),
   },
@@ -673,7 +820,7 @@ export const POSTS: Post[] = [
         "Where adtech revenue actually gets lost (and why this role sits on the leak)",
       score: 378,
       comments: 47,
-      age: "2d",
+      age: "1d",
     },
     body: (
       <>
@@ -728,6 +875,56 @@ export const POSTS: Post[] = [
   },
 
   /* ---------------------------------------------------------------- 9 */
+  {
+    meta: {
+      id: "post-tool",
+      flair: "Tool",
+      tone: "green",
+      title:
+        "I built an ad tech SaaS solo. Reddit is one of the seven platforms it supports.",
+      score: 445,
+      comments: 62,
+      age: "2d",
+    },
+    body: (
+      <>
+        <p>
+          adsfellow.app. Built alone, no team, no funding. It generates campaign
+          strategy across Google, Meta, LinkedIn, Pinterest, Microsoft, TikTok
+          and Reddit.
+        </p>
+        <p>
+          Why that matters for an AM role: I have had to read the Reddit ads
+          documentation as a builder, not as a buyer. I know what a pixel event
+          payload looks like, what a Conversions API rejection looks like when it
+          comes back, and why deduplication between pixel and CAPI matters when
+          both are firing for the same conversion.
+        </p>
+        <p>
+          I was going to list the exact field names that trip people up. I have
+          them from third party integration docs rather than from Reddit&rsquo;s
+          own API reference, which I could not reach while building this page, so
+          I am not going to recite a schema I have not re-checked at the source.
+          <Unverified />
+        </p>
+        <p>
+          The part that does not need a citation: when a client&rsquo;s pixel is
+          not firing, I do not open a ticket and wait. I diagnose it first, then
+          open the ticket with the diagnosis attached. That saves Ad Ops a round
+          trip and it saves the client a week of blind spend.
+        </p>
+        <p>
+          Measurement is not a setup task you tick off in week one. It is a
+          retention lever. Advertisers rarely churn loudly. They quietly reduce
+          budget because they could not prove the return internally when their own
+          boss asked. If the client cannot demonstrate the value of Reddit to
+          their CFO, Reddit does not make next year&rsquo;s plan.
+        </p>
+      </>
+    ),
+  },
+
+  /* ---------------------------------------------------------------- 10 */
   {
     meta: {
       id: "post-ama",
