@@ -399,9 +399,12 @@ export const POSTS: Post[] = [
             <strong>Les communautés utiles selon le vertical.</strong>{" "}r/france
             et r/AskFrance pour le grand public, r/vosfinances pour la finance
             et l&rsquo;assurance, r/conseiljuridique pour le juridique,
-            r/BeautyFR pour la beauté, r/DeLaFrance quand le registre peut être
-            plus léger. Ce ne sont pas des équivalents traduits des
-            communautés anglophones, elles ont leurs propres codes.
+            r/Cuisine et r/jardin pour l&rsquo;alimentaire et la maison. Ce ne
+            sont pas des équivalents traduits des communautés anglophones, elles
+            ont leurs propres codes, et la francophonie sur Reddit est bien plus
+            petite que l&rsquo;anglophone. C&rsquo;est une contrainte de
+            ciblage, et c&rsquo;est aussi la raison pour laquelle un annonceur
+            français ne peut pas se permettre d&rsquo;y arriver en broadcast.
           </li>
         </ul>
 
