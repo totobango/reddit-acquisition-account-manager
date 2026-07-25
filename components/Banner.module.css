@@ -2,8 +2,14 @@
   padding: 1rem 0 0;
 }
 
+/* min-height rather than height: the banner grows if the context line wraps,
+   so the text can never overflow the band at any viewport. The bottom padding
+   keeps that text clear of the sub icon, which overlaps the lower left. */
 .banner {
-  height: 128px;
+  min-height: 128px;
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 1.5rem 2.25rem;
   border-radius: var(--radius-card);
   background: linear-gradient(105deg, #1a1a2e 0%, #2d1b3d 48%, #7a2a10 82%, #ff4500 130%);
   position: relative;
@@ -25,7 +31,8 @@
 
 @media (max-width: 767px) {
   .banner {
-    height: 88px;
+    min-height: 104px;
+    padding: 1rem 1rem 2.5rem;
     border-radius: 0;
   }
 
@@ -110,24 +117,29 @@
   text-decoration: none;
 }
 
-/* Reddit meta styling: 12px, muted, middot separators. --ink-weak rather than
-   the #7C7C7C in the brief, which measures 4.18:1 on white and fails AA. */
+/* Sits on the dark end of the gradient. z-index clears the dot-grid
+   pseudo-element, which is absolutely positioned and would otherwise
+   paint over the text. */
 .contextLine {
-  padding: 0.75rem 1rem 0;
+  position: relative;
+  z-index: var(--z-base);
   margin: 0;
-  color: var(--ink-weak);
-  font-size: 0.75rem;
-  line-height: 1.5;
+  color: #fff;
+  font-size: clamp(0.8125rem, 1.5vw, 0.9375rem);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
 }
 
 /* A real character rather than generated content, so the separators survive in
    the accessible name instead of running the three parts together. */
 .sep {
-  margin: 0 0.125rem;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .description {
-  padding: 0.375rem 1rem 0;
+  padding: 0.75rem 1rem 0;
   color: var(--ink-weak);
   font-size: 0.875rem;
   max-width: 68ch;
