@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { ChevronDown } from "@/components/Icons";
 import { PostCard } from "@/components/PostCard";
 import { Sidebar } from "@/components/Sidebar";
+import { SourceLegend } from "@/components/Source";
 import { POSTS } from "@/content/posts";
 import styles from "./page.module.css";
 
@@ -17,6 +18,12 @@ export default function Page() {
 
         <div className={styles.columns}>
           <div className={styles.feed}>
+            {/* Sits above the feed so the labelling system is understood before
+                the first chip is met, rather than explained inside a post. */}
+            <div className={styles.legendWrap}>
+              <SourceLegend />
+            </div>
+
             <div className={styles.sortBar}>
               <span className={`${styles.sortPill} ${styles.sortPillActive}`}>
                 Hot

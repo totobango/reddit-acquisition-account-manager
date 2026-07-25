@@ -87,48 +87,20 @@
   max-width: 60ch;
 }
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.mailLink {
+  font-weight: 700;
+  color: var(--blue-text);
+  overflow-wrap: anywhere;
 }
 
-.mailBtn {
-  display: inline-flex;
-  align-items: center;
-  height: 36px;
-  padding: 0 1.125rem;
-  border-radius: var(--radius-pill);
-  background: var(--orange-solid);
-  color: #fff;
-  font-size: 0.875rem;
+.linkedinRow {
+  margin: 0.375rem 0 0;
+}
+
+.linkedinLink {
+  font-size: 0.9375rem;
   font-weight: 600;
-  text-decoration: none;
-  transition: background var(--dur-fast) ease;
-}
-
-.mailBtn:hover {
-  background: var(--orange-solid-hover);
-  text-decoration: none;
-}
-
-.linkBtn {
-  display: inline-flex;
-  align-items: center;
-  height: 36px;
-  padding: 0 1.125rem;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-pill);
-  color: var(--ink);
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background var(--dur-fast) ease;
-}
-
-.linkBtn:hover {
-  background: var(--bg-sunken);
-  text-decoration: none;
+  color: var(--blue-text);
 }
 
 .footnote {

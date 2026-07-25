@@ -20,6 +20,20 @@ export function Banner() {
         </div>
       </div>
 
+      {/* Answers "what is this page" for anyone who gets the link forwarded
+          with no context. Reads as community metadata, not as a header. */}
+      <p className={styles.contextLine}>
+        Acquisition Account Manager, Mid-Market (Southern Europe){" "}
+        <span className={styles.sep} aria-hidden="true">
+          ·
+        </span>{" "}
+        Amsterdam{" "}
+        <span className={styles.sep} aria-hidden="true">
+          ·
+        </span>{" "}
+        Application by Thomas Germain
+      </p>
+
       <p className={styles.description}>
         France, Italy, Spain. Mid-market advertisers, onboarded the Reddit way. A
         community of one, for now.

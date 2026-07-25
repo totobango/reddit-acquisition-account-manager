@@ -23,21 +23,21 @@ export function CommentComposer() {
       {open ? (
         <div className={styles.open}>
           <p className={styles.openText}>
-            Comments are open everywhere else on this site. Here, just email me.
-          </p>
-          <div className={styles.links}>
-            <a className={styles.mailBtn} href={`mailto:${EMAIL}`}>
+            Comments are open everywhere else on Reddit. Here, just email me:{" "}
+            <a className={styles.mailLink} href={`mailto:${EMAIL}`}>
               {EMAIL}
             </a>
+          </p>
+          <p className={styles.linkedinRow}>
             <a
-              className={styles.linkBtn}
+              className={styles.linkedinLink}
               href={LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
             >
               LinkedIn
             </a>
-          </div>
+          </p>
           <p className={styles.footnote}>
             No form, nothing to fill in, nothing gets sent from this page.
           </p>

@@ -3,7 +3,6 @@ import { MockAd, MockAdPair } from "@/components/MockAd";
 import {
   Corrected,
   Reconstructed,
-  SourceLegend,
   Sourced,
   Unverified,
 } from "@/components/Source";
@@ -28,8 +27,6 @@ export const POSTS: Post[] = [
     },
     body: (
       <>
-        <SourceLegend />
-
         <div className={p.tldr}>
           <strong>TL;DR:</strong> Week 1 setup and discovery. Week 2 first
           campaign live. Weeks 3 to 4 first signals and pruning. Month 2
@@ -744,6 +741,10 @@ export const POSTS: Post[] = [
     },
     body: (
       <>
+        <p>
+          Máni asked me during our call what I understood about the role. I gave
+          him the short answer then. This page is the long one.
+        </p>
         <p>Quick facts, so you do not have to dig.</p>
         <p>
           Six years in ad tech, all of it from Dublin. Google (125 percent of

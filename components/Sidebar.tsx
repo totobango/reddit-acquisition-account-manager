@@ -110,8 +110,11 @@ export function Sidebar() {
         <ul className={styles.linkList}>
           {COMMUNITIES.map((name) => (
             <li className={styles.community} key={name}>
+              {/* Fallback community avatar: the sub's initial, the way Reddit
+                  renders a community with no icon set. The "r/" belongs to the
+                  name, not the avatar. */}
               <span className={styles.communityIcon} aria-hidden="true">
-                r/
+                {name.charAt(2).toUpperCase()}
               </span>
               {name}
             </li>
